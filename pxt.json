@@ -1,6 +1,5 @@
 {
     "name": "Castle Game Jam",
-    "version": "0.0.1",
     "description": "",
     "dependencies": {
         "device": "*"
@@ -14,7 +13,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "1.3.4",
+        "target": "1.2.6",
         "targetId": "arcade"
     },
     "supportedTargets": [
