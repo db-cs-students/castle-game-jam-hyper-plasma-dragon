@@ -1,8 +1,3 @@
-"""
-Title: a big Drag castle
-Creators: Noah Martinez, Raymond Waffle
-Description:hi 
-"""
 # Setup game
 mySprite = sprites.create(img("""
         . . . . . . . . . . b 5 b . . . 
@@ -149,31 +144,30 @@ scene.set_background_image(img("""
 """))
 scene.set_tile_map(img("""
     ................................................
-        ................................................
-        .................777...............7............
-        ................7777..............77............
-        ..............777777.............777............
-        ........77777.........77777777..7777............
-        e777777e77777eeeeeeeee77777777eeeeeeee..........
-        eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..........
-"""))
-scene.set_tile(7,
-    img("""
-        c c c c c c c c c c c c c c c c 
-            c c c c c c c c c c c c c c c c 
-            a a a a c c a a a a a a c c c c 
-            c c c c c c c c c c c c c c c c 
-            c a a a a a a a a a a a c a c c 
-            c c c c c c c c c c c a c a c c 
-            a a a c a a a a a a c a c a c c 
-            a a a c a a a a 3 a c c c a c c 
-            c c c c c c c 3 a a c c c a c c 
-            a a a a a a c c a a c a c a c c 
-            a 3 3 3 3 3 a c a a c a c a c c 
-            c c c c 3 3 a c a c c a c a c c 
-            a a c c c 3 a c c c c a c c c c 
-            3 3 a a c 3 a c a a c a c c c c 
-            3 3 3 a c a c c a a c a c a c c 
-            a 3 3 a c c c c a a c c c a c c
-    """),
+    ................................................
+    .................777...............7............
+    ................7777..............77............
+    ..............777777.............777............
+    ........77777.........77777777..7777............
+    e777777e77777eeeeeeeee77777777eeeeeeee..........
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee..........
+""")8,img)
+scene.set_tile(7,img("""
+    a a a a a c c a a a a a a a c f
+    3 3 3 3 3 c 3 3 3 3 3 3 3 c f c
+    3 3 3 3 c c 3 3 3 3 3 3 c c c a
+    a a a a c a a a a a a c c c 3 a
+    c c c c c c c c c c c c c 3 3 a
+    c a 3 3 3 3 3 3 3 c c c a 3 3 a
+    c c a a a a a a c c c c a 3 3 a
+    c c c c c c c c c c a c a 3 3 a
+    a a a a a a c c c a 3 c a 3 3 a
+    a a a a a c c c c a 3 c a 3 3 c
+    c c c c c c c a c a 3 c a 3 3 c
+    a a a c c c a a c a 3 c a 3 c c
+    c c c c c c a a c a 3 c a c c c
+    a a c c a c a a c a 3 c c c 3 a
+    c f c c a c a a c a a c a 3 3 a
+    f c a c a c a a c a c c a 3 3 a
+"""),
     True)
