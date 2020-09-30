@@ -29,13 +29,16 @@ let jump = sprites.create(img`
 jump.ay = 100
 //  controls
 controller.player1.moveSprite(jump, 50, 0)
-let can_double_jump = []
+let can_double_jump = true
 function jump(): Sprite {
     
     if (can_double_jump) {
         jump.vy = -100
-        can_double_jump = []
+        can_double_jump = jump.isHittingTile(CollisionDirection.Bottom)
     }
     
 }
 
+controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
+    
+})

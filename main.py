@@ -31,9 +31,30 @@ jump.ay = 100
 
 # controls
 controller.player1.move_sprite(jump, 50,0)
-can_double_jump = true
+can_double_jump = True
 def jump():
     global can_double_jump
     if can_double_jump:
         jump.vy = -100
         can_double_jump = jump.is_hitting_tile(CollisionDirection.Bottom)
+controller.A.on_event(ControllerButtonEvent.PRESSED, )
+
+# tilemap
+scene.set_tile_map(img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . 3 3 3 . . . . . . . . . . . .
+    3 3 3 3 3 3 3 3 . . . . . . . .
+    3 3 3 3 3 3 3 3 3 3 3 . . . . .
+    3 3 3 3 3 3 3 3 3 3 3 3 3 . . .
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 . .
+    . . . 3 3 3 3 3 3 . 3 3 3 . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+"""))
