@@ -8,7 +8,7 @@ info.set_score(0)
 info.set_life(1)
 
 # Player
-jump = sprites.create(img("""
+jumper = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -27,17 +27,17 @@ jump = sprites.create(img("""
     . . . . . . . . . . . . . . . .
 """))
 
-jump.ay = 100
+jumper.ay = 100
 
 # controls
-controller.player1.move_sprite(jump, 50,0)
+controller.player1.move_sprite(jumper, 50,0)
 can_double_jump = True
 def jump():
     global can_double_jump
     if can_double_jump:
-        jump.vy = -100
-        can_double_jump = jump.is_hitting_tile(CollisionDirection.Bottom)
-controller.A.on_event(ControllerButtonEvent.PRESSED, )
+        jumper.vy = -100
+        can_double_jump = jumper.is_hitting_tile(CollisionDirection.BOTTOM)
+controller.A.on_event(ControllerButtonEvent.PRESSED, jump)
 
 # tilemap
 scene.set_tile_map(img("""
@@ -45,16 +45,39 @@ scene.set_tile_map(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
+    . . . . . . . 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-    . 3 3 3 . . . . . . . . . . . .
-    3 3 3 3 3 3 3 3 . . . . . . . .
-    3 3 3 3 3 3 3 3 3 3 3 . . . . .
-    3 3 3 3 3 3 3 3 3 3 3 3 3 . . .
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 . .
-    . . . 3 3 3 3 3 3 . 3 3 3 . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 """))
+scene.set_tile(7, img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+"""),True)
+
+def on_update():
+        global can_double_jump
+        if jumper.is_hitting_tile(CollisionDirection.BOTTOM):
+            can_double_jump = True
