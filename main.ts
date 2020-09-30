@@ -8,7 +8,7 @@ Description:hi
 info.setScore(0)
 info.setLife(1)
 //  Player
-let my_sprite = sprites.create(img`
+let jump = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -26,5 +26,16 @@ let my_sprite = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 `)
-//  player movement
-controller.player1.moveSprite(null)
+jump.ay = 100
+//  controls
+controller.player1.moveSprite(jump, 50, 0)
+let can_double_jump = []
+function jump(): Sprite {
+    
+    if (can_double_jump) {
+        jump.vy = -100
+        can_double_jump = []
+    }
+    
+}
+
