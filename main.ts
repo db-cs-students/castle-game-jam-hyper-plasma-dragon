@@ -199,3 +199,14 @@ scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 `)
+//  player death
+function death() {
+    info.changeLifeBy(-1)
+    if (info.life() != 0) {
+        jumper.vy = 0
+        jumper.y = scene.screenHeight() / 2
+        game.splash("Press A to Start")
+    }
+    
+}
+

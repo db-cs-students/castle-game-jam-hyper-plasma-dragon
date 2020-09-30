@@ -200,3 +200,9 @@ scene.set_background_image(img("""
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 """))
 # player death
+def death():
+    info.change_life_by(-1)
+    if info.life() != 0:
+        jumper.vy = 0
+        jumper.y = scene.screen_height()/2
+        game.splash("Press A to Start")
