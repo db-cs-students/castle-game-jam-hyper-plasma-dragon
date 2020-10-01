@@ -8,13 +8,31 @@ info.set_score(0)
 info.set_life(1)
 
 # Player
-jumper = sprites.create(img("""
+jumper_facing_right = img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . 8 8 8 8 . . . . . . .
+    . . . . . 8 8 2 8 . . . . . . .
     . . . . . 8 8 8 8 . . . . . . .
     . . . . . 8 8 8 8 . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+""")
+jumper_facing_left = img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . 8 8 8 8 . . . . . . .
+    . . . . . 8 2 8 8 . . . . . . .
+    . . . . . 8 8 8 8 . . . . . . .
     . . . . . 8 8 8 8 . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -25,7 +43,8 @@ jumper = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-"""))
+""")
+jumper = sprites.create(jumper_facing_right)
 
 jumper.ay = 100
 scene.camera_follow_sprite(jumper)
@@ -70,9 +89,15 @@ scene.set_tile(7, img("""
 """),True)
 
 def on_update():
-        global can_double_jump
-        if jumper.is_hitting_tile(CollisionDirection.BOTTOM):
-            can_double_jump = True
+    global can_double_jump
+    if jumper.is_hitting_tile(CollisionDirection.BOTTOM):
+        can_double_jump = True
+
+    #jumper.say(str(controller.dx()))
+    if controller.dx() > 0:
+        jumper.set_image(jumper_facing_right)
+    elif controller.dx() <0: 
+        jumper.set_image(jumper_facing_left)
 game.on_update(on_update)
 
 # Generate Coins
@@ -200,9 +225,5 @@ scene.set_background_image(img("""
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 """))
 # player death
-def death():
-    info.change_life_by(-1)
-    if info.life() != 0:
-        jumper.vy = 0
-        jumper.y = scene.screen_height()/2
-        game.splash("Press A to Start")
+
+

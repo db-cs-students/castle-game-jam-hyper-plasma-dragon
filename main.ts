@@ -8,13 +8,31 @@ Description:hi
 info.setScore(0)
 info.setLife(1)
 //  Player
-let jumper = sprites.create(img`
+let jumper_facing_right = img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . 8 8 8 8 . . . . . . .
+    . . . . . 8 8 2 8 . . . . . . .
     . . . . . 8 8 8 8 . . . . . . .
     . . . . . 8 8 8 8 . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`
+let jumper_facing_left = img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . 8 8 8 8 . . . . . . .
+    . . . . . 8 2 8 8 . . . . . . .
+    . . . . . 8 8 8 8 . . . . . . .
     . . . . . 8 8 8 8 . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -25,7 +43,8 @@ let jumper = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-`)
+`
+let jumper = sprites.create(jumper_facing_right)
 jumper.ay = 100
 scene.cameraFollowSprite(jumper)
 //  controls
@@ -72,6 +91,13 @@ game.onUpdate(function on_update() {
     
     if (jumper.isHittingTile(CollisionDirection.Bottom)) {
         can_double_jump = true
+    }
+    
+    // jumper.say(str(controller.dx()))
+    if (controller.dx() > 0) {
+        jumper.setImage(jumper_facing_right)
+    } else if (controller.dx() < 0) {
+        jumper.setImage(jumper_facing_left)
     }
     
 })
@@ -199,14 +225,3 @@ scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 `)
-//  player death
-function death() {
-    info.changeLifeBy(-1)
-    if (info.life() != 0) {
-        jumper.vy = 0
-        jumper.y = scene.screenHeight() / 2
-        game.splash("Press A to Start")
-    }
-    
-}
-
