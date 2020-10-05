@@ -64,6 +64,7 @@ jumper = sprites.create(jumper_facing_right,SpriteKind.player)
 
 jumper.ay = 100
 scene.camera_follow_sprite(jumper)
+
 # controls
 controller.player1.move_sprite(jumper, 60,0)
 can_double_jump = True
@@ -275,7 +276,6 @@ def on_update():
     global can_double_jump
     if jumper.is_hitting_tile(CollisionDirection.BOTTOM):
         can_double_jump = True
-
     #jumper.say(str(controller.dx()))
     if controller.dx() > 0:
         jumper.set_image(jumper_facing_right)
