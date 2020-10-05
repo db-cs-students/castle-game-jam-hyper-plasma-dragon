@@ -142,22 +142,22 @@ scene.setTile(15, img`
     f f f f f f f f f f f f f f f f
 `, true)
 let coin1 = sprites.create(img`
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
-    5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . 5 5 5 5 . . . . . .
+    . . . . . 5 5 5 5 5 5 . . . . .
+    . . . . 5 5 5 5 5 5 5 5 . . . .
+    . . . . 5 5 5 5 5 5 5 5 . . . .
+    . . . . 5 5 5 5 5 5 5 5 . . . .
+    . . . . 5 5 5 5 5 5 5 5 . . . .
+    . . . . . 5 5 5 5 5 5 . . . . .
+    . . . . . . 5 5 5 5 . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
 `, SpriteKind.Food)
 tiles.placeOnTile(coin1, tiles.getTileLocation(3, 4))
 let coin2 = sprites.create(img`
@@ -476,6 +476,7 @@ scene.setBackgroundImage(img`
 //  player death
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     // jumper.say("tsss")
+    scene.cameraShake()
     info.changeLifeBy(-1)
 })
 scene.onHitTile(SpriteKind.Player, 15, function on_hit_tile2(sprite: Sprite) {
