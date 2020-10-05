@@ -76,52 +76,52 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function jump() {
 })
 //  tilemap
 scene.setTileMap(img`
-    ..........444444444444.....2244444444444444444444444444444.4
-    ..........4444444......4.442244444444444.2.24444444444f....4
-    .............44...444444444444444.444...2...24444444444444..
-    ................4444444444...................244444444444..4
-    .............4..444444.....444444444444.......444444444442..
-    .............44........4444444444444444.42.2.2444444..444..4
-    ..........44...4.....444444444444.44444444444444444.........
-    444444224444.4..4.444444....444.....444...4444444...4.44...4
-    444444444444444...................................4444444222
-    4444444444444444444444222444444444444422244444.4444444444444
+    ..........aaaaaaaaaaaa.....22aaaaaaaaaaaaaaaaaaaaaaaaaaaaa.a
+    ..........aaaaaaa......a.aa22aaaaaaaaaaa.2.2aaaaaaaaaaf....a
+    .............aa...aaaaaaaaaaaaaaa.aaa...2...2aaaaaaaaaaaaa..
+    ................aaaaaaaaaa...................2aaaaaaaaaaa..a
+    .............a..aaaaaa.....aaaaaaaaaaaa.......aaaaaaaaaaa2..
+    .............aa........aaaaaaaaaaaaaaaa.a2.2.2aaaaaa..aaa..a
+    ..........aa...a.....aaaaaaaaaaaa.aaaaaaaaaaaaaaaaa.........
+    aaaaaa22aaaa.a..a.aaaaaa....aaa.....aaa...aaaaaaa...a.aa...a
+    aaaaaaaaaaaaaaa...................................aaaaaaa222
+    aaaaaaaaaaaaaaaaaaaaaa222aaaaaaaaaaaaa222aaaaa.aaaaaaaaaaaaa
 `)
-scene.setTile(4, img`
-    4 4 f 4 4 4 f 4 4 4 f 4 4 f 4 4
-    4 4 f 4 4 4 f 4 4 4 f 4 4 f 4 4
+scene.setTile(10, img`
+    a a f a a a f a a a f a a f a a
+    a a f a a a f a a a f a a f a a
     f f f f f f f f f f f f f f f f
-    4 f 4 4 4 f 4 4 4 f 4 4 f 4 4 4
-    4 f 4 4 4 f 4 4 4 f 4 4 f 4 4 4
+    a f a a a f a a a f a a f a a a
+    a f a a a f a a a f a a f a a a
     f f f f f f f f f f f f f f f f
-    4 4 4 f 4 4 4 f 4 4 4 f 4 4 f 4
-    4 4 4 f 4 4 4 f 4 4 4 f 4 4 f 4
+    a a a f a a a f a a a f a a f a
+    a a a f a a a f a a a f a a f a
     f f f f f f f f f f f f f f f f
-    4 f 4 4 4 f 4 4 f 4 4 4 f 4 4 4
-    4 f 4 4 4 f 4 4 f 4 4 4 f 4 4 4
+    a f a a a f a a f a a a f a a a
+    a f a a a f a a f a a a f a a a
     f f f f f f f f f f f f f f f f
-    4 4 f 4 4 4 f 4 4 4 f 4 4 4 f 4
-    4 4 f 4 4 4 f 4 4 4 f 4 4 4 f 4
+    a a f a a a f a a a f a a a f a
+    a a f a a a f a a a f a a a f a
     f f f f f f f f f f f f f f f f
-    4 f 4 4 4 f 4 4 4 f 4 4 4 f 4 4
+    a f a a a f a a a f a a a f a a
 `, true)
 scene.setTile(2, img`
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    5 4 4 5 5 4 4 4 4 2 2 2 4 4 4 4
+    4 4 4 4 4 5 5 4 2 2 2 2 4 4 4 5
+    4 2 2 2 4 4 5 4 2 2 4 4 5 5 5 5
+    2 2 4 2 4 4 5 4 2 2 4 5 5 5 5 4
+    2 2 2 2 4 4 5 4 2 2 4 4 5 5 4 4
+    4 2 2 2 4 5 5 4 4 4 4 4 4 4 4 2
+    2 2 2 4 4 5 5 5 4 4 2 2 2 2 2 2
+    4 2 2 4 5 5 5 5 4 2 2 4 2 2 2 4
+    5 4 4 4 4 4 4 5 5 4 2 2 2 4 4 4
+    4 4 4 2 2 2 4 4 5 5 4 4 4 4 5 5
+    4 2 2 2 2 2 2 2 4 5 5 5 5 5 5 5
+    5 4 4 2 4 2 2 4 4 5 5 5 4 4 4 5
+    5 5 4 2 2 2 4 4 4 5 5 4 2 2 2 4
+    4 5 4 4 4 4 5 5 5 5 4 2 4 2 2 4
+    4 5 5 5 5 5 5 4 4 4 2 4 2 4 2 4
+    4 5 5 5 4 4 4 4 2 2 2 2 4 2 4 4
 `, true)
 scene.setTile(15, img`
     f f f f f f f f f f f f f f f f
