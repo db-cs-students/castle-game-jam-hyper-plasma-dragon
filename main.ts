@@ -59,7 +59,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function jump() {
     
 })
 //  level one
-let level = 2
+let level = 1
 game.onUpdate(function on_update2() {
     if (level == 1) {
         scene.setTileMap(img`
@@ -221,11 +221,11 @@ game.onUpdate(function on_update2() {
             444444444444444444444444444444444444444444444444444444444444
             444444444444444444444444.44444444444444444444444444444444444
             ..........44..............4...............................44
-            .........4444...........444..........4...f................44
+            .........4444...........444..........4...3................44
             .......444...44......4444..........4.4..44................44
             .....444............44...........4.4.4....................44
             ..................444..........8...4.4....................44
-            ......4........4444..............4.4.4....................44
+            ...4..4........4444..............4.4.4....................44
             .....44444888844.............4.4.4.4.4....................44
             ..........44444..............4............................44
             444444444........4444444444444444444444444444444444444444444
@@ -307,22 +307,40 @@ scene.setTile(4, img`
     4 f 4 4 4 f 4 4 4 f 4 4 4 f 4 4
 `, true)
 scene.setTile(8, img`
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
-    8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
+    9 6 6 9 9 6 6 6 6 8 8 8 6 6 6 6
+    6 6 6 6 6 9 9 6 8 8 8 8 6 6 6 9
+    6 8 8 8 6 6 9 6 8 8 6 6 9 9 9 9
+    8 8 6 8 6 6 9 6 8 8 6 9 9 9 9 6
+    8 8 8 8 6 6 9 6 8 8 6 6 9 9 6 6
+    6 8 8 8 6 9 9 6 6 6 6 6 6 6 6 8
+    8 8 8 6 6 9 9 9 6 6 8 8 8 8 8 8
+    6 8 8 6 9 9 9 9 6 8 8 6 8 8 8 6
+    9 6 6 6 6 6 6 9 9 6 8 8 8 6 6 6
+    6 6 6 8 8 8 6 6 9 9 6 6 6 6 9 9
+    6 8 8 8 8 8 8 8 6 9 9 9 9 9 9 9
+    9 6 6 8 6 8 8 6 6 9 9 9 6 6 6 9
+    9 9 6 8 8 8 6 6 6 9 9 6 8 8 8 6
+    6 9 6 6 6 6 9 9 9 9 6 8 6 8 8 6
+    6 9 9 9 9 9 9 6 6 6 8 6 8 6 8 6
+    6 9 9 9 6 6 6 6 8 8 8 8 6 8 6 6
+`, true)
+scene.setTile(3, img`
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 `, true)
 let coin1 = sprites.create(img`
     . . 5 5 5 5 . .
@@ -577,12 +595,15 @@ scene.setBackgroundImage(img`
     eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 `)
 //  player death
-scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
+function on_hit_tile(sprite: Sprite) {
     // jumper.say("tsss")
     sprite.setPosition(50, 50)
     scene.cameraShake()
     info.changeLifeBy(-1)
-})
+}
+
+scene.onHitTile(SpriteKind.Player, 2, on_hit_tile)
+scene.onHitTile(SpriteKind.Player, 8, on_hit_tile)
 scene.onHitTile(SpriteKind.Player, 15, function on_hit_tile2(sprite: Sprite) {
     
     level = 2
@@ -590,3 +611,8 @@ scene.onHitTile(SpriteKind.Player, 15, function on_hit_tile2(sprite: Sprite) {
 scene.onHitTile(SpriteKind.Player, 5, function on_hit_tile3(sprite: Sprite) {
     info.changeScoreBy(1)
 })
+function on_win(jumper: any) {
+    true
+}
+
+scene.onHitTile(SpriteKind.Player, 3, on_hit_tile)
